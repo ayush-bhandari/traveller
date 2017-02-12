@@ -1,0 +1,19 @@
+{
+	"success": true,
+	"message": "List all location",
+	"data": [
+		{
+			"name":"kathmandu",
+			"slug":"",
+			"description":""
+		},{
+			"name":"pokhara",
+			"slug":"",
+			"description":""
+		},{
+			"name":"chitwan",
+			"slug":"",
+			"description":""
+		}
+	]
+}

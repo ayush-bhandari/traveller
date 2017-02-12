@@ -11,6 +11,17 @@
     {
         var api = {};
         api.baseUrl = 'app/data/';
+
+        api.location = $resource(api.baseUrl+'home/location.json');//, {
+            // query:'@query'
+        // }, {
+               // query: {
+               //      method: 'GET', 
+               //      headers: {
+               //          'authorization': 'Bearer '+ 'token' 
+               //  }
+            // }
+         // });
         return api;
     }
 
