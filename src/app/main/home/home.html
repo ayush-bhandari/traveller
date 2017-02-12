@@ -1,0 +1,87 @@
+<div class="home">
+	<div class="title" translate="">Welcome To YapKey. Travel the world!</div>
+
+	<form name="travelForm" ng-submit="vm.travelFormSubmit()" novalidate>
+
+		<!-- location -->
+		<md-input-container>
+		<md-autocomplete flex required
+            md-selected-item="vm.selectedItem"
+            md-search-text="searchText"
+            md-items="item in vm.querySearch(searchText)"
+            md-item-text="item.loc"
+            md-delay="300"
+            md-floating-label="Enter Location">
+          <div layout="row" class="item" layout-align="start center">
+            <span md-highlight-text="searchText">{{item.loc}}</span>  
+          </div>
+        </md-autocomplete>
+        <div ng-messages="travelForm.$error" role="alert" multiple>
+            <div ng-message="required">
+                <span translate="">Please enter a location</span>
+            </div>
+        </div>
+        </md-input-container>
+        <!-- /location -->
+
+        <!-- checkin -->
+        <md-input-container>
+        	<label>Check In</label>
+        	<md-datepicker ng-model="vm.search.checkin" md-min-date="vm.minDate" md-open-on-focus ng-blur="vm.checkIn()" required></md-datepicker>
+        	<div ng-messages="travelForm.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+        </md-input-container>
+        <!-- /checkin -->
+
+        <!-- checkout -->
+        <md-input-container>
+            <label>Check Out</label>
+            <md-datepicker ng-model="vm.search.checkout" md-min-date="vm.minDate" md-open-on-focus ng-blur="vm.checkOut()" required></md-datepicker>
+            <div ng-messages="travelForm.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+        </md-input-container>
+        <!-- /checkout -->
+
+        <!-- adults -->
+        <md-input-container>
+	        <label>Adult/s</label>
+        	<md-select ng-model="vm.search.adult" required>
+	        	<md-optgroup>
+	        		<md-option ng-value="adult" ng-repeat="adult in vm.adults">{{adult}}</md-option>
+	        	</md-optgroup>
+        	</md-select>
+        	<div ng-messages="travelForm.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+      	</md-input-container>
+        <!-- /adults -->
+
+        <!-- children -->
+		<md-input-container>
+	        <label>Child</label>
+        	<md-select ng-model="vm.search.child" required>
+	        	<md-optgroup>
+	        		<md-option ng-value="child" ng-repeat="child in vm.children">{{child}}</md-option>
+	        	</md-optgroup>
+        	</md-select>
+        	<div ng-messages="travelForm.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+      	</md-input-container>
+        <!-- /children -->
+
+        <!-- submit -->
+        <md-button ng-disabled="!travelForm.$valid" type="submit" class="md-raised md-primary">Search</md-button>
+        <!-- /submit -->
+	</form>
+</div>
