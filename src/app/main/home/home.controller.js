@@ -80,7 +80,24 @@
             // localStorage.checkout = vm.search.checkout;
             // localStorage.adult = vm.search.adult;
             // localStorage.child = vm.search.child;
-            localStorage.travelInfo = vm.travelInfo;
+            localStorage.setItem("location", vm.travelInfo.location.name);
+            localStorage.setItem("checkin", vm.travelInfo.checkin);
+            localStorage.setItem("checkout", vm.travelInfo.checkout);
+            localStorage.setItem("adult", vm.travelInfo.adult);
+            localStorage.setItem("child", vm.travelInfo.child);
+
+            // localStorage.info = {
+            //     location: vm.travelInfo.location,
+            //     checkin: vm.travelInfo.checkin,
+            //     checkout: vm.travelInfo.checkout,
+            //     adult: vm.travelInfo.adult,
+            //     child: vm.travelInfo.child
+            // };
+
+            // localStorage.travelInfo = vm.travelInfo;
+            //             console.log(vm.travelInfo);
+
+            // console.log(localStorage.travelInfo);
             $location.path('/cart');
         }
         vm.searchLocation = function(query){

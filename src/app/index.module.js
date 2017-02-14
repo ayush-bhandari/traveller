@@ -21,9 +21,7 @@
             // 'app.quick-panel',
 
             // Sample
-            'app.home'
-
-            //another
-            // 'app.another'
+            'app.home',
+            'app.cart'
         ]);
 })();

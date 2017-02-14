@@ -1,0 +1,13 @@
+<!-- <div layout="row">
+	<div><i class="zmdi zmdi-shopping-cart zmdi-hc-3x"></i></div>
+	<div layout="column">
+	<div>
+	<span>{{ ngCart.getTotalItems() }}</span>
+    	<ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+    </div>
+    <div>
+    <span>{{ ngCart.totalCost() | currency }}</span>
+    </div>
+    </div>
+</div>  -->   
+    <md-badge class="md-primary"><b>{{ ngCart.getTotalItems() }}</b></md-badge>

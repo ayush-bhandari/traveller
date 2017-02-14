@@ -22,6 +22,9 @@
                //  }
             // }
          // });
+         api.services = $resource(api.baseUrl+'cart/services.json');
+         api.transportation = $resource(api.baseUrl+'cart/transportation.json');
+         api.hotels = $resource(api.baseUrl+'cart/hotels.json');
         return api;
     }
 

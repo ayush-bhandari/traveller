@@ -1,0 +1,221 @@
+{
+    "data": [
+        {
+            "id": 48,
+            "name": "Avataar Kathmandu Hotel",
+            "slug": "avataar-kathmandu-hotel",
+            "description": "Hotel In Kathmandu",
+            "price": 0,
+            "image_id": 0,
+            "image": null,
+            "location": {
+                "id": 1,
+                "name": "Kathmandu",
+                "slug": "kathmandu",
+                "description": "Capital City of Nepal",
+                "city": "Kathmandu",
+                "geolocation": "Kathmandu, Central Region, Nepal",
+                "country": "Nepal",
+                "latitude": "27.72",
+                "longitude": "85.32",
+                "deleted_at": null
+            },
+            "geolocation": "Thamel, Kathmandu, Central Region 44600, Nepal",
+            "active": 0,
+            "days": 0,
+            "meals": [
+                {
+                    "id": 33,
+                    "name": "Breakfast",
+                    "type": "Continental Breakfast",
+                    "description": "Served with fresh juice.",
+                    "days": 1,
+                    "image_id": 0,
+                    "active": 0,
+                    "hotel_id": 48,
+                    "price": "5",
+                    "default_image": null
+                }
+            ],
+            "rooms": [
+                {
+                    "id": 35,
+                    "name": "Deluxe Room",
+                    "type": "Double Bed",
+                    "description": "Room with central Location in Thamel",
+                    "beds": 2,
+                    "image_id": 0,
+                    "air_conditioner": 0,
+                    "hotel_id": 48,
+                    "price": "0",
+                    "capacity": 3,
+                    "default_image": null,
+                    "prices": [
+                        {
+                            "id": 8,
+                            "number_of_person": 1,
+                            "price": "40",
+                            "room_id": 35
+                        },
+                        {
+                            "id": 9,
+                            "number_of_person": 2,
+                            "price": "45",
+                            "room_id": 35
+                        },
+                        {
+                            "id": 10,
+                            "number_of_person": 3,
+                            "price": "50",
+                            "room_id": 35
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Trekkers Inn",
+            "slug": "trekkers-inn",
+            "description": "Hotel in Pokhara",
+            "price": 0,
+            "image_id": 0,
+            "image": null,
+            "location": {
+                "id": 2,
+                "name": "Pokhara",
+                "slug": "pokhara",
+                "description": "Best Tourist destination of Nepal",
+                "city": "Pokhara",
+                "geolocation": "Pokhara, Western Region, Nepal",
+                "country": "Nepal",
+                "latitude": "28.24",
+                "longitude": "84.00",
+                "deleted_at": null
+            },
+            "geolocation": "Pokhara, Western Region, Nepal",
+            "active": 0,
+            "days": 0,
+            "meals": [],
+            "rooms": [
+                {
+                    "id": 36,
+                    "name": "Deluxe Room",
+                    "type": "deluxe-room",
+                    "description": "Room",
+                    "beds": 1,
+                    "image_id": 0,
+                    "air_conditioner": 0,
+                    "hotel_id": 49,
+                    "price": "0",
+                    "capacity": 2,
+                    "default_image": null,
+                    "prices": [
+                        {
+                            "id": 11,
+                            "number_of_person": 1,
+                            "price": "15",
+                            "room_id": 36
+                        },
+                        {
+                            "id": 12,
+                            "number_of_person": 2,
+                            "price": "15",
+                            "room_id": 36
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "name": "Baghmara Wildlife Resort",
+            "slug": "baghmara-wildlife-resort",
+            "description": "Resort located perfectly to base you right next to the National Park Entrance from where you could start all Jungle Activities.",
+            "price": 0,
+            "image_id": 0,
+            "image": null,
+            "location": {
+                "id": 3,
+                "name": "Chitwan",
+                "slug": "chitwan",
+                "description": "Elephant paradise of Nepal",
+                "city": "Chitwan",
+                "geolocation": "Pokhara, Western Region, Nepal",
+                "country": "Nepal",
+                "latitude": "28.24",
+                "longitude": "84.00",
+                "deleted_at": null
+            },
+            "geolocation": "Chitwan, Central Region, Nepal",
+            "active": 0,
+            "days": 0,
+            "meals": [
+                {
+                    "id": 34,
+                    "name": "Breakfast",
+                    "type": "Continental Breakfast",
+                    "description": "Breakfast to start your day.",
+                    "days": 1,
+                    "image_id": 0,
+                    "active": 0,
+                    "hotel_id": 50,
+                    "price": "3",
+                    "default_image": null
+                },
+                {
+                    "id": 35,
+                    "name": "Lunch",
+                    "type": "Continental Lunch",
+                    "description": "Lunch served according to your taste.",
+                    "days": 1,
+                    "image_id": 0,
+                    "active": 0,
+                    "hotel_id": 50,
+                    "price": "5",
+                    "default_image": null
+                },
+                {
+                    "id": 36,
+                    "name": "Dinner",
+                    "type": "Continental Dinner",
+                    "description": "Dinner served to help you ease and relax.",
+                    "days": 1,
+                    "image_id": 0,
+                    "active": 0,
+                    "hotel_id": 50,
+                    "price": "5",
+                    "default_image": null
+                }
+            ],
+            "rooms": [
+                {
+                    "id": 37,
+                    "name": "Deluxe Room",
+                    "type": "deluxe-room",
+                    "description": "Deluxe Room with jungle and garden view.",
+                    "beds": 1,
+                    "image_id": 0,
+                    "air_conditioner": 0,
+                    "hotel_id": 50,
+                    "price": "0",
+                    "capacity": 2,
+                    "default_image": null,
+                    "prices": []
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "available_includes": [],
+        "default_includes": [],
+        "pagination": {
+            "total": 3,
+            "count": 3,
+            "per_page": 20,
+            "current_page": 1,
+            "total_pages": 1,
+            "links": []
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "data": [
+        {
+            "id": 23,
+            "name": "Tourist Bus",
+            "slug": "tourist-bus",
+            "price": 7,
+            "maximum_people": 28,
+            "image_id": 0,
+            "image": null,
+            "is_private": 0,
+            "description": "Kathmandu to Chitwan",
+            "active": 1,
+            "start_location": "Kathmandu",
+            "end_location": "Chitwan",
+            "pickup": "Departs from Kantipath",
+            "time": "0",
+            "duration": 5
+        },
+        {
+            "id": 22,
+            "name": "Microbus",
+            "slug": "microbus",
+            "price": 50,
+            "maximum_people": 10,
+            "image_id": 0,
+            "image": null,
+            "is_private": 1,
+            "description": "From kathmandu to pokhara express",
+            "active": 1,
+            "start_location": "Kathmandu",
+            "end_location": "Nagarkot",
+            "pickup": "Departs from kathmandu at 10PM",
+            "time": "0",
+            "duration": 2
+        },
+        {
+            "id": 26,
+            "name": "Tourist Bus",
+            "slug": "tourist-bus-1",
+            "price": 7,
+            "maximum_people": 28,
+            "image_id": 0,
+            "image": null,
+            "is_private": 0,
+            "description": "Chitwan to Kathmandu Scenic Drive",
+            "active": 1,
+            "start_location": "Chitwan",
+            "end_location": "Kathmandu",
+            "pickup": "Departs from Sauraha Tourist Bus Stand",
+            "time": "0",
+            "duration": 5
+        },
+        {
+            "id": 27,
+            "name": "Tourist Bus",
+            "slug": "tourist-bus-2",
+            "price": 7,
+            "maximum_people": 28,
+            "image_id": 0,
+            "image": null,
+            "is_private": 0,
+            "description": "Kathmandu to Pokhara",
+            "active": 1,
+            "start_location": "Kathmandu",
+            "end_location": "Pokhara",
+            "pickup": "Departs from Kantipath ",
+            "time": "0",
+            "duration": 5
+        },
+        {
+            "id": 28,
+            "name": "Tourist Bus",
+            "slug": "tourist-bus-3",
+            "price": 7,
+            "maximum_people": 28,
+            "image_id": 0,
+            "image": null,
+            "is_private": 0,
+            "description": "Deaparts from Tourist Bus Stop",
+            "active": 1,
+            "start_location": "Pokhara",
+            "end_location": "Kathmandu",
+            "pickup": "Departs from Tourist Bus Stop",
+            "time": "0",
+            "duration": 5
+        }
+    ],
+    "meta": {
+        "available_includes": [],
+        "default_includes": [],
+        "pagination": {
+            "total": 6,
+            "count": 5,
+            "per_page": 5,
+            "current_page": 1,
+            "total_pages": 2,
+            "links": {
+                "next": "http://yapkey-beta.herokuapp.com/api/transportations?page=2"
+            }
+        }
+    }
+}

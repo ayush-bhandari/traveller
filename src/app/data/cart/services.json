@@ -1,0 +1,556 @@
+{
+    "data": [
+        {
+            "id": 10,
+            "name": "Paraglyding",
+            "slug": "paraglyding",
+            "price": [
+                {
+                    "LOC": "45"
+                },
+                {
+                    "SAR": "65"
+                },
+                {
+                    "OTH": "85"
+                },
+                {
+                    "AGT": "60"
+                },
+                {
+                    "SPL": "60"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 0,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Jump from Foothills of Himalaya",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 2,
+                    "name": "Pokhara",
+                    "slug": "pokhara",
+                    "description": "Best Tourist destination of Nepal",
+                    "city": "Pokhara",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 10,
+                        "location_id": 2
+                    }
+                }
+            ],
+            "location": "Pokhara"
+        },
+        {
+            "id": 1,
+            "name": "Bungy Jump",
+            "slug": "bungy-jump",
+            "price": [
+                {
+                    "LOC": "50"
+                },
+                {
+                    "SAR": "75"
+                },
+                {
+                    "OTH": "100"
+                },
+                {
+                    "AGT": "90"
+                },
+                {
+                    "SPL": "80"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 0,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Adventorus Sports of Nepal",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 1,
+                    "name": "Kathmandu",
+                    "slug": "kathmandu",
+                    "description": "Capital City of Nepal",
+                    "city": "Kathmandu",
+                    "geolocation": "Kathmandu, Central Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "27.72",
+                    "longitude": "85.32",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 1,
+                        "location_id": 1
+                    }
+                }
+            ],
+            "location": "Kathmandu"
+        },
+        {
+            "id": 13,
+            "name": "Ultra-light Flight",
+            "slug": "ultra-light-flight",
+            "price": [
+                {
+                    "LOC": "65"
+                },
+                {
+                    "SAR": "65"
+                },
+                {
+                    "OTH": "65"
+                },
+                {
+                    "AGT": "65"
+                },
+                {
+                    "SPL": "65"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Fly with a experience ultra-light pilot around beautiful lake city, Pokhara.",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 2,
+                    "name": "Pokhara",
+                    "slug": "pokhara",
+                    "description": "Best Tourist destination of Nepal",
+                    "city": "Pokhara",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 13,
+                        "location_id": 2
+                    }
+                }
+            ],
+            "location": "Pokhara"
+        },
+        {
+            "id": 14,
+            "name": "Jeep Drive",
+            "slug": "jeep-drive",
+            "price": [
+                {
+                    "LOC": "18"
+                },
+                {
+                    "SAR": "20"
+                },
+                {
+                    "OTH": "20"
+                },
+                {
+                    "AGT": "18"
+                },
+                {
+                    "SPL": "18"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Jungle Safari for 5 Hours inside Chitwan National Park",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 14,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 17,
+            "name": "Tharu Culture Show",
+            "slug": "tharu-culture-show-2",
+            "price": [
+                {
+                    "LOC": "5"
+                },
+                {
+                    "SAR": "5"
+                },
+                {
+                    "OTH": "5"
+                },
+                {
+                    "AGT": "5"
+                },
+                {
+                    "SPL": "5"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Local tribe called Tharu dance to display their tradition and culture.",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 17,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 48,
+            "name": "Elephant Bath",
+            "slug": "elephant-bath-1",
+            "price": [
+                {
+                    "LOC": "5"
+                },
+                {
+                    "SAR": "5"
+                },
+                {
+                    "OTH": "5"
+                },
+                {
+                    "AGT": "5"
+                },
+                {
+                    "SPL": "5"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Wash Elephant in Rapti River.",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 48,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 49,
+            "name": "Elephant Safari",
+            "slug": "elephant-safari",
+            "price": [
+                {
+                    "LOC": "15"
+                },
+                {
+                    "SAR": "15"
+                },
+                {
+                    "OTH": "15"
+                },
+                {
+                    "AGT": "15"
+                },
+                {
+                    "SPL": "15"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Elephant Ride for 1 and Half hour in Chitwan National Park",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 49,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 52,
+            "name": "Canoeing",
+            "slug": "canoeing",
+            "price": [
+                {
+                    "LOC": "5"
+                },
+                {
+                    "SAR": "5"
+                },
+                {
+                    "OTH": "5"
+                },
+                {
+                    "AGT": "5"
+                },
+                {
+                    "SPL": "5"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Dugout Canoeing ",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 52,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 54,
+            "name": "2 way Tourist Bus",
+            "slug": "2-way-tourist-bus",
+            "price": [
+                {
+                    "LOC": "1000"
+                },
+                {
+                    "SAR": ""
+                },
+                {
+                    "OTH": ""
+                },
+                {
+                    "AGT": ""
+                },
+                {
+                    "SPL": ""
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "Transportation both ways",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 54,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        },
+        {
+            "id": 53,
+            "name": "2 Night 3 Days Nepali Package",
+            "slug": "2-night-3-days-nepali-package",
+            "price": [
+                {
+                    "LOC": "5000"
+                },
+                {
+                    "SAR": "5000"
+                },
+                {
+                    "OTH": "5000"
+                },
+                {
+                    "AGT": "5000"
+                },
+                {
+                    "SPL": "5000"
+                }
+            ],
+            "minimum_days": 0,
+            "is_taxable": 1,
+            "category": "Adventure",
+            "image_id": 1,
+            "image": {
+                "id": 1,
+                "name": "hotel-ibis-hermosillo.jpg",
+                "description": "The file size and file path30621",
+                "path": "uploads/hotel-ibis-hermosillo.jpg"
+            },
+            "description": "2 Night 3 Days Package with all meal and Jungle Activities",
+            "default": 0,
+            "active": 1,
+            "locations": [
+                {
+                    "id": 3,
+                    "name": "Chitwan",
+                    "slug": "chitwan",
+                    "description": "Elephant paradise of Nepal",
+                    "city": "Chitwan",
+                    "geolocation": "Pokhara, Western Region, Nepal",
+                    "country": "Nepal",
+                    "latitude": "28.24",
+                    "longitude": "84.00",
+                    "deleted_at": null,
+                    "pivot": {
+                        "service_id": 53,
+                        "location_id": 3
+                    }
+                }
+            ],
+            "location": "Chitwan"
+        }
+    ],
+    "meta": {
+        "available_includes": [],
+        "default_includes": [],
+        "pagination": {
+            "total": 10,
+            "count": 10,
+            "per_page": 10,
+            "current_page": 1,
+            "total_pages": 1,
+            "links": []
+        }
+    }
+}

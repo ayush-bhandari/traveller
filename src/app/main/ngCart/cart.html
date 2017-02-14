@@ -1,0 +1,37 @@
+<div ng-controller="CartsController as vm">
+<div ng-controller="CartController">
+<div ng-show="ngCart.getTotalItems() === 0" layout="row" layout-align="center center">
+    <span style="color: red; font-size: 26px;">Your cart is <b>empty</b></span>
+</div>
+
+<div ng-show="ngCart.getTotalItems() > 0">
+<md-table-container>
+  <table md-table>
+    <tbody md-body>
+      <tr md-row>
+        <td md-cell>Price (Per Person)</td>
+        <td md-cell></td>
+        <td md-cell ng-bind="vm.pricePerPerson | currency">{{ vm.pricePerPerson | currency}}</td>
+      </tr>
+    </tbody>
+    <tbody md-body>
+      <tr md-row>
+        <td md-cell>Subtotal</td>
+        <td md-cell ng-bind="vm.subTotal | currency">{{ vm.subTotal | currency }}</td>
+      </tr>
+    </tbody>
+    <tbody md-body ng-show="ngCart.getTax()">
+      <tr md-row>
+        <td md-cell>Tax ({{ ngCart.getTaxRate() }}%)</td>
+        <td md-cell>{{ ngCart.getTax() | currency }}</td>
+      </tr>
+    </tbody>
+    <tbody md-body>
+      <tr md-row>
+        <td md-cell>Grand Total</td>
+        <td md-cell>{{ ngCart.totalCost() | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+</div></div></div>

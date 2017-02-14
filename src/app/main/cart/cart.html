@@ -1,0 +1,120 @@
+<md-card ng-click="vm.openDetailForm()">
+    <div>
+    <h3>Traveller's Detail</h3>
+    <p><b> Name:</b>{{vm.travelInfo.name}}</p>
+    <p><b>Email:</b>{{vm.travelInfo.email}}</p>
+    <p><b>Phone:</b>{{vm.travelInfo.contact}}</p>
+    <p><b>Nationality:</b>{{vm.travelInfo.nationality}}</p>
+    <p><b>Total:</b> {{vm.travelInfo.adult}} <ng-pluralize count="vm.travelInfo.adult" when="{1: 'Adult', 'other':'Adults'}"></ng-pluralize><span ng-show="vm.noChild"> and {{vm.travelInfo.child}} <ng-pluralize count="vm.travelInfo.child" when="{null : '',0: '' ,1: 'Child', 'other':'Children'}"> </ng-pluralize></span></p>
+    </div>
+</md-card>
+
+<!-- checkin -->
+        <md-input-container>
+        	<label>Date of Checking In</label>
+        	<md-datepicker name="checkin" ng-model="vm.travelInfo.checkin" md-min-date="vm.minDate" md-open-on-focus ng-blur="vm.checkIn()" required md-placeholder="{{vm.travelInfo.checkin}}"></md-datepicker>
+        	<div ng-messages="travelForm.checkin.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+            <div ng-messages="vm.checkInError" role="alert" multiple>
+                <div ng-message="low">
+                    <span translate="">You can't check in to a place after the date of checking out from there.</span>
+                </div>
+            </div>
+        </md-input-container>
+        <!-- /checkin -->
+
+        <!-- checkout -->
+        <md-input-container>
+            <label>Date of Checking Out</label>
+            <md-datepicker name="checkout" ng-model="vm.travelInfo.checkout" md-min-date="vm.minDate" md-open-on-focus ng-blur="vm.checkOut()" required md-placeholder="{{vm.travelInfo.checkout}}"></md-datepicker>
+            <div ng-messages="travelForm.checkout.$error" role="alert" multiple>
+                <div ng-message="required">
+                    <span translate="">This field is required</span>
+                </div>
+            </div>
+            <div ng-messages="vm.checkOutError" role="alert" multiple>
+                <div ng-message="low">
+                    <span translate="">You can't check out from a place before checking in to it.</span>
+                </div>
+            </div>
+        </md-input-container>
+        <!-- /checkout -->
+
+    <form name="locationForm">
+    <!-- location -->
+        <md-autocomplete flex required
+            md-input-name="location"
+            md-selected-item="vm.travelInfo.location"
+            md-search-text="searchText"
+            md-items="item in vm.searchLocation(searchText)"
+            md-item-text="item.name"
+            md-require-match
+            md-floating-label="Enter Location"
+            md-selected-item-change="vm.getItems()"><!-- ng-blur="vm.getItems()" -->
+          <md-item-template>
+            <span md-highlight-text="searchText">{{item.name}}</span>
+          </md-item-template>
+          <div ng-messages="locationForm.location.$error" role="alert" multiple>
+            <div ng-message="required">This field is required.</div>
+            <div ng-message="md-require-match">Please select an existing location.</div>
+
+          </div>
+        </md-autocomplete>
+    <!-- /location -->
+
+<!-- type -->
+<md-input-container>
+    <label>Query</label>
+    <md-select ng-model="vm.serviceType" md-selected-text="vm.serviceType" md-on-close="vm.getItems()">
+      <md-optgroup>
+        <md-option ng-value="item" ng-repeat="item in vm.serviceTypeList">{{item}}</md-option>
+      </md-optgroup>
+    </md-select>
+</md-input-container>
+<!-- /type -->
+
+    </form>
+
+    <div>
+		<!-- WIDGET 1 -->
+                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25" ng-repeat="obj in vm.availableObject">
+
+                            <!-- Front -->
+                            <ms-widget-front class="white-bg">
+                                <div class="flip-to-front">
+                                    <md-button class="md-icon-button" ng-click="flipWidget()"
+                                               aria-label="Flip widget">
+                                        <md-icon md-font-icon="icon-menu" class="s16"></md-icon>
+                                    </md-button>
+                                </div>
+
+                                <div>
+                                   <h2>{{obj.name}}</h2>
+                                   <md-button class="md-fab md-warn" aria-label="add" ng-click="alert('hello');">
+					                    <md-icon md-font-icon="icon-plus"></md-icon>
+					                </md-button> 
+                                </div>
+                            </ms-widget-front>
+                            <!-- / Front -->
+
+                            <!-- Back -->
+                            <ms-widget-back class="p-16 white-bg">
+                                <div class="flip-to-front">
+                                    <md-button class="md-icon-button" ng-click="flipWidget()"
+                                               aria-label="Flip widget">
+                                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                                    </md-button>
+                                </div>
+
+                                <div>
+                                    {{obj.description}}
+                                </div>
+                            </ms-widget-back>
+                            <!-- / Back -->
+
+                        </ms-widget>
+                        <!-- / WIDGET 1 -->
+    </div>
