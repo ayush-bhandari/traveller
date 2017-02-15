@@ -4,23 +4,8 @@
             "id": 10,
             "name": "Paraglyding",
             "slug": "paraglyding",
-            "price": [
-                {
-                    "LOC": "45"
-                },
-                {
-                    "SAR": "65"
-                },
-                {
-                    "OTH": "85"
-                },
-                {
-                    "AGT": "60"
-                },
-                {
-                    "SPL": "60"
-                }
-            ],
+            "price": 23,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 0,
             "category": "Adventure",
@@ -58,23 +43,8 @@
             "id": 1,
             "name": "Bungy Jump",
             "slug": "bungy-jump",
-            "price": [
-                {
-                    "LOC": "50"
-                },
-                {
-                    "SAR": "75"
-                },
-                {
-                    "OTH": "100"
-                },
-                {
-                    "AGT": "90"
-                },
-                {
-                    "SPL": "80"
-                }
-            ],
+            "price": 43,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 0,
             "category": "Adventure",
@@ -112,23 +82,8 @@
             "id": 13,
             "name": "Ultra-light Flight",
             "slug": "ultra-light-flight",
-            "price": [
-                {
-                    "LOC": "65"
-                },
-                {
-                    "SAR": "65"
-                },
-                {
-                    "OTH": "65"
-                },
-                {
-                    "AGT": "65"
-                },
-                {
-                    "SPL": "65"
-                }
-            ],
+            "price": 13,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -166,23 +121,8 @@
             "id": 14,
             "name": "Jeep Drive",
             "slug": "jeep-drive",
-            "price": [
-                {
-                    "LOC": "18"
-                },
-                {
-                    "SAR": "20"
-                },
-                {
-                    "OTH": "20"
-                },
-                {
-                    "AGT": "18"
-                },
-                {
-                    "SPL": "18"
-                }
-            ],
+            "price": 33,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -220,23 +160,8 @@
             "id": 17,
             "name": "Tharu Culture Show",
             "slug": "tharu-culture-show-2",
-            "price": [
-                {
-                    "LOC": "5"
-                },
-                {
-                    "SAR": "5"
-                },
-                {
-                    "OTH": "5"
-                },
-                {
-                    "AGT": "5"
-                },
-                {
-                    "SPL": "5"
-                }
-            ],
+            "price": 66,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -274,23 +199,8 @@
             "id": 48,
             "name": "Elephant Bath",
             "slug": "elephant-bath-1",
-            "price": [
-                {
-                    "LOC": "5"
-                },
-                {
-                    "SAR": "5"
-                },
-                {
-                    "OTH": "5"
-                },
-                {
-                    "AGT": "5"
-                },
-                {
-                    "SPL": "5"
-                }
-            ],
+            "price": 27,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -328,23 +238,8 @@
             "id": 49,
             "name": "Elephant Safari",
             "slug": "elephant-safari",
-            "price": [
-                {
-                    "LOC": "15"
-                },
-                {
-                    "SAR": "15"
-                },
-                {
-                    "OTH": "15"
-                },
-                {
-                    "AGT": "15"
-                },
-                {
-                    "SPL": "15"
-                }
-            ],
+            "price": 33,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -382,23 +277,8 @@
             "id": 52,
             "name": "Canoeing",
             "slug": "canoeing",
-            "price": [
-                {
-                    "LOC": "5"
-                },
-                {
-                    "SAR": "5"
-                },
-                {
-                    "OTH": "5"
-                },
-                {
-                    "AGT": "5"
-                },
-                {
-                    "SPL": "5"
-                }
-            ],
+            "price": 19,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -436,23 +316,8 @@
             "id": 54,
             "name": "2 way Tourist Bus",
             "slug": "2-way-tourist-bus",
-            "price": [
-                {
-                    "LOC": "1000"
-                },
-                {
-                    "SAR": ""
-                },
-                {
-                    "OTH": ""
-                },
-                {
-                    "AGT": ""
-                },
-                {
-                    "SPL": ""
-                }
-            ],
+            "price": 78,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",
@@ -490,23 +355,8 @@
             "id": 53,
             "name": "2 Night 3 Days Nepali Package",
             "slug": "2-night-3-days-nepali-package",
-            "price": [
-                {
-                    "LOC": "5000"
-                },
-                {
-                    "SAR": "5000"
-                },
-                {
-                    "OTH": "5000"
-                },
-                {
-                    "AGT": "5000"
-                },
-                {
-                    "SPL": "5000"
-                }
-            ],
+            "price": 15,
+            "type":"service",
             "minimum_days": 0,
             "is_taxable": 1,
             "category": "Adventure",

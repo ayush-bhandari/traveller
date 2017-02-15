@@ -22,6 +22,7 @@
 
             // Sample
             'app.home',
-            'app.cart'
+            'app.cart',
+            'ngCart'
         ]);
 })();

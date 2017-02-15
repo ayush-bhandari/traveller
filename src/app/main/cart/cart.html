@@ -53,7 +53,7 @@
             md-item-text="item.name"
             md-require-match
             md-floating-label="Enter Location"
-            md-selected-item-change="vm.getItems()"><!-- ng-blur="vm.getItems()" -->
+            md-selected-item-change="vm.getEachItems()"><!-- ng-blur="vm.getItems()" -->
           <md-item-template>
             <span md-highlight-text="searchText">{{item.name}}</span>
           </md-item-template>
@@ -68,7 +68,7 @@
 <!-- type -->
 <md-input-container>
     <label>Query</label>
-    <md-select ng-model="vm.serviceType" md-selected-text="vm.serviceType" md-on-close="vm.getItems()">
+    <md-select ng-model="vm.serviceType" md-selected-text="vm.serviceType" md-on-close="vm.getEachItems()">
       <md-optgroup>
         <md-option ng-value="item" ng-repeat="item in vm.serviceTypeList">{{item}}</md-option>
       </md-optgroup>
@@ -92,10 +92,13 @@
                                 </div>
 
                                 <div>
-                                   <h2>{{obj.name}}</h2>
-                                   <md-button class="md-fab md-warn" aria-label="add" ng-click="alert('hello');">
-					                    <md-icon md-font-icon="icon-plus"></md-icon>
-					                </md-button> 
+                                   <h2><b>Name: </b>{{obj.name}}</h2>
+                                   <h3><b>Price: </b>{{obj.price}}</h3>
+                                </div>
+                                <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
+                                    <span class="h4 secondary-text text-truncate">
+                                    <ngcart-addtocart id="{{obj.id}}" name="{{obj.name}}" price="{{obj.price}}" quantity="1" quantity-max="{{vm.travelInfo.totalPeople}}" data="obj">Add</ngcart-addtocart>
+                                    </span>
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
@@ -118,3 +121,5 @@
                         </ms-widget>
                         <!-- / WIDGET 1 -->
     </div>
+    <div><ngcart-cart></ngcart-cart></div>
+<item-table></item-table>

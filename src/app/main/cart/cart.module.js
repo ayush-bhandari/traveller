@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.cart', [])
+        .module('app.cart', ['underscore'])
         .config(config);
 
     /** @ngInject */
@@ -16,7 +16,7 @@
                 views  : {
                     'content@app': {
                         templateUrl: 'app/main/cart/cart.html',
-                        controller : 'CartController as vm'
+                        controller : 'CartsController as vm'
                     }
                 }
             });

@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Transportation</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Pick up Date</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="transportations in vm.allCartItems.transportation">
+    <td>{{transportations.name}}</td>
+    <td>{{transportations.start_location}}</td>
+    <td>{{transportations.end_location}}</td>
+    <td><md-datepicker ng-model="transportations.date" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus></md-datepicker></td>
+    <td>{{transportations.price}}</td>
+    <td> 
+      <md-button class="md-fab md-mini md-primary" aria-label="remove item" ng-click="ngCart.removeItemById(transportations.id.toString());">
+        <md-icon md-font-icon="icon-close"></md-icon>
+      </md-button>
+    </td>
+  </tr>
+</table>

@@ -4,13 +4,16 @@
 
     angular
         .module('app.cart')
-        .controller('CartController', CartController);
+        .controller('CartsController', CartsController);
 
     /** @ngInject */
-    function CartController(api,$location,$timeout,$q,$mdDialog)
+    function CartsController(api,$location,$timeout,$q,$mdDialog,ngCart,_,$rootScope,$mdToast)
     {
         var vm = this;
 
+        ngCart.setTaxRate(7.5);
+        ngCart.setShipping(0);
+        
         vm.travelInfo= {};
         vm.noChild = false;
         vm.checkInError = {};
@@ -20,6 +23,7 @@
         vm.serviceTypeList = {};
         vm.serviceType = {};
         vm.availableObject = {};
+        vm.allCartItems={};
         
         vm.init = function(){
             vm.travelInfo.location = localStorage.getItem("location");
@@ -27,6 +31,7 @@
             vm.travelInfo.checkout = new Date(localStorage.getItem("checkout"));
             vm.travelInfo.adult = localStorage.getItem("adult");
             vm.travelInfo.child = localStorage.getItem("child");
+            vm.travelInfo.totalPeople = parseInt(vm.travelInfo.adult) + parseInt(vm.travelInfo.child)
             vm.travelInfo.name = localStorage.getItem("name");
             vm.travelInfo.email = null;
             vm.travelInfo.nationality = null;
@@ -63,6 +68,15 @@
                 function(response){
 
                 });
+
+            console.log(_.pluck(ngCart.getItems(),'_data'));
+            vm.allCartItems.wholeItems = _.pluck(ngCart.getItems(),'_data');
+            vm.allCartItems.hotel = _.where(vm.allCartItems.wholeItems, {type: "hotel"});
+            vm.allCartItems.service = _.where(vm.allCartItems.wholeItems, {type: "service"});
+            vm.allCartItems.transportation = _.where(vm.allCartItems.wholeItems, {type: "transportation"});
+            console.log(vm.allCartItems.hotel);
+            console.log(vm.allCartItems.service);
+            console.log(vm.allCartItems.transportation);
         }
         vm.init();
 
@@ -105,10 +119,12 @@
         vm.searchLocation = function(query){
             return vm.allLocation;
         }
-        vm.getItems = function(){
+        vm.getEachItems = function(){
             // console.log(vm.serviceType);
             
             console.log(vm.travelInfo);
+            console.log(vm.serviceType);
+            console.log(vm.travelInfo.location);
             if (vm.serviceType == 'Hotels'){
                 api.hotels.get({},
                 function (response){
@@ -140,6 +156,32 @@
 
             }
         }
+
+        $rootScope.$on('ngCart:change', function(){
+            vm.allCartItems.wholeItems = _.pluck(ngCart.getItems(),'_data');
+            vm.allCartItems.hotel = _.where(vm.allCartItems.wholeItems, {type: "hotel"});
+            vm.allCartItems.service = _.where(vm.allCartItems.wholeItems, {type: "service"});
+            vm.allCartItems.transportation = _.where(vm.allCartItems.wholeItems, {type: "transportation"});
+            console.log(vm.allCartItems.hotel);
+            console.log(vm.allCartItems.service);
+            console.log(vm.allCartItems.transportation);
+        });
+        $rootScope.$on('ngCart:itemAdded', function(){
+            $mdToast.show(
+                  $mdToast.simple()
+                    .textContent('Item Has been added')
+                    .position("top right")
+                    .hideDelay(3000)
+                );
+        });
+        $rootScope.$on('ngCart:itemRemoved', function(){
+            $mdToast.show(
+                  $mdToast.simple()
+                    .textContent('Item Has been removed')
+                    .position("top right")
+                    .hideDelay(3000)
+                );
+        });
         
     }
 })();

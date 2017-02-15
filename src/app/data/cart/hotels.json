@@ -5,7 +5,8 @@
             "name": "Avataar Kathmandu Hotel",
             "slug": "avataar-kathmandu-hotel",
             "description": "Hotel In Kathmandu",
-            "price": 0,
+            "price": 12,
+            "type":"hotel",
             "image_id": 0,
             "image": null,
             "location": {
@@ -78,7 +79,8 @@
             "name": "Trekkers Inn",
             "slug": "trekkers-inn",
             "description": "Hotel in Pokhara",
-            "price": 0,
+            "price": 34,
+            "type":"hotel",
             "image_id": 0,
             "image": null,
             "location": {
@@ -132,7 +134,8 @@
             "name": "Baghmara Wildlife Resort",
             "slug": "baghmara-wildlife-resort",
             "description": "Resort located perfectly to base you right next to the National Park Entrance from where you could start all Jungle Activities.",
-            "price": 0,
+            "price": 22,
+            "type":"hotel",
             "image_id": 0,
             "image": null,
             "location": {
