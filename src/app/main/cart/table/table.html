@@ -1,13 +1,13 @@
 <div ng-controller="CartController">
 	<div ng-show="ngCart.getTotalItems() > 0">
 		<div ng-show="vm.allCartItems.hotel.length > 0">
-			<div ng-include="'app/main/cart/views/hotels.html'"></div>
+			<div ng-include="'app/main/cart/views/hotels/hotels.html'"></div>
 		</div>
 		<div ng-show="vm.allCartItems.service.length > 0">
-			<div ng-include="'app/main/cart/views/services.html'"></div>
+			<div ng-include="'app/main/cart/views/services/services.html'"></div>
 		</div>
 		<div ng-show="vm.allCartItems.transportation.length > 0">
-			<div ng-include="'app/main/cart/views/transportations.html'"></div>
+			<div ng-include="'app/main/cart/views/transportations/transportations.html'"></div>
 		</div>
 	</div>
 </div>
