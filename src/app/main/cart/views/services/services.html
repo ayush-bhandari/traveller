@@ -1,4 +1,4 @@
-<table ng-controller="ServiceController as sc">
+<table>
   <tr>
     <th>Service</th>
     <th>Location</th>
@@ -9,7 +9,7 @@
   <tr ng-repeat="services in vm.allCartItems.service">
     <td>{{services.name}}</td>
     <td>{{services.location}}</td>
-    <td><md-datepicker ng-model="services.date" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus></md-datepicker></td>
+    <td><md-datepicker ng-model="services.date" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" ng-blur="vm.serviceDate(services)" md-open-on-focus></md-datepicker></td>
     <td>{{services.price}}</td>
     <td> 
       <md-button class="md-fab md-mini md-primary" aria-label="remove item" ng-click="ngCart.removeItemById(services.id.toString());">

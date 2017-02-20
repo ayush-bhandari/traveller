@@ -1,4 +1,4 @@
-<table ng-controller="TransportationController as tc">
+<table>
   <tr>
     <th>Transportation</th>
     <th>From</th>
@@ -11,7 +11,7 @@
     <td>{{transportations.name}}</td>
     <td>{{transportations.start_location}}</td>
     <td>{{transportations.end_location}}</td>
-    <td><md-datepicker ng-model="transportations.date" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus></md-datepicker></td>
+    <td><md-datepicker ng-model="transportations.date" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" ng-blur="vm.transportationDate(transportations)" md-open-on-focus></md-datepicker></td>
     <td>{{transportations.price}}</td>
     <td> 
       <md-button class="md-fab md-mini md-primary" aria-label="remove item" ng-click="ngCart.removeItemById(transportations.id.toString());">

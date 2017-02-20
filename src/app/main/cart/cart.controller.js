@@ -24,7 +24,8 @@
         vm.serviceType = {};
         vm.availableObject = {};
         vm.allCartItems={};
-        
+        vm.conflict = {};
+
         vm.init = function(){
             vm.travelInfo.location = localStorage.getItem("location");
             vm.travelInfo.checkin = new Date(localStorage.getItem("checkin"));
@@ -77,6 +78,7 @@
             console.log(vm.allCartItems.hotel);
             console.log(vm.allCartItems.service);
             console.log(vm.allCartItems.transportation);
+            vm.conflict = {errorA:false};
         }
         vm.init();
 
@@ -156,7 +158,28 @@
 
             }
         }
-
+        vm.hotelCheckIn = function(hotel){
+            if (hotel.checkOutDate < hotel.checkInDate){
+                hotel.hotelCheckInError = {low:true};
+                hotel.checkInDate = null; 
+            }else{
+                hotel.hotelCheckInError = {low:false};
+            }
+        }
+        vm.hotelCheckOut = function(hotel){
+            if (hotel.checkOutDate < hotel.checkInDate){
+                hotel.checkOutDate = null;
+                hotel.hotelCheckOutError = {low:true};   
+            }else{
+                hotel.hotelCheckOutError = {low:false};
+            }
+        }
+        vm.serviceDate = function(service){
+            console.log(service);
+        }
+        vm.transportationDate = function(transportation){
+            console.log(transportation);
+        }
         $rootScope.$on('ngCart:change', function(){
             vm.allCartItems.wholeItems = _.pluck(ngCart.getItems(),'_data');
             vm.allCartItems.hotel = _.where(vm.allCartItems.wholeItems, {type: "hotel"});
@@ -165,7 +188,24 @@
             console.log(vm.allCartItems.hotel);
             console.log(vm.allCartItems.service);
             console.log(vm.allCartItems.transportation);
+            vm.conflictCalculator();
         });
+        vm.conflictCalculator = function(){
+            console.log(vm.allCartItems.hotel);
+            console.log(vm.allCartItems.service);
+            console.log(vm.allCartItems.transportation);
+            if ((vm.allCartItems.hotel.length !== 0) && (vm.allCartItems.transportation.length !== 0)){
+            if (vm.allCartItems.hotel[0].location.name == vm.allCartItems.transportation[0].start_location){
+                console.log("location matched");
+                vm.conflict = {errorA : true};
+            }else{
+                console.log("location not matched");
+                vm.conflict = {errorA: false};
+            }
+            }else{
+                vm.conflict = {errorA: false};
+            }
+        }
         $rootScope.$on('ngCart:itemAdded', function(){
             $mdToast.show(
                   $mdToast.simple()
@@ -182,6 +222,7 @@
                     .hideDelay(3000)
                 );
         });
+
         
     }
 })();

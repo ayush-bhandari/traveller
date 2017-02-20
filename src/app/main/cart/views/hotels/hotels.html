@@ -1,4 +1,4 @@
-<table ng-controller="HotelController as hc">
+<table>
   <tr>
     <th>Hotels</th>
     <th>Location</th>
@@ -11,16 +11,16 @@
     <td>{{hotels.name}}</td>
     <td>{{hotels.location.name}}</td>
     <td>
-    <md-datepicker ng-model="hc.checkInDate" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus ng-blur="hc.checkIn()"></md-datepicker>
-    <div ng-messages="hc.hotelCheckInError" role="alert" multiple>
+    <md-datepicker ng-model="hotels.checkInDate" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus ng-blur="vm.hotelCheckIn(hotels)"></md-datepicker>
+    <div ng-messages="hotels.hotelCheckInError" role="alert" multiple>
                 <div ng-message="low">
                     <span translate="">You can't check in to a place after the date of checking out from there.</span>
                 </div>
             </div>
     </td>
     <td>
-    <md-datepicker ng-model="hc.checkOutDate" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus ng-blur="hc.checkOut()"></md-datepicker>
-    <div ng-messages="hc.hotelCheckOutError" role="alert" multiple>
+    <md-datepicker ng-model="hotels.checkOutDate" md-placeholder="Enter date" md-min-date="vm.travelInfo.checkin" md-max-date="vm.travelInfo.checkout" md-open-on-focus ng-blur="vm.hotelCheckOut(hotels)"></md-datepicker>
+    <div ng-messages="hotels.hotelCheckOutError" role="alert" multiple>
                 <div ng-message="low">
                     <span translate="">You can't check in to a place after the date of checking out from there.</span>
                 </div>

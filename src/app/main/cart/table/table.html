@@ -1,4 +1,9 @@
 <div ng-controller="CartController">
+	<div ng-messages="vm.conflict" role="alert" multiple>
+        <div ng-message="errorA">
+            <span translate="">its a error</span>
+        </div>
+    </div>
 	<div ng-show="ngCart.getTotalItems() > 0">
 		<div ng-show="vm.allCartItems.hotel.length > 0">
 			<div ng-include="'app/main/cart/views/hotels/hotels.html'"></div>
