@@ -1,7 +1,17 @@
 <div ng-controller="CartController">
-	<div ng-messages="vm.conflict" role="alert" multiple>
+	<div ng-messages="vm.serviceConflict" role="alert" multiple>
         <div ng-message="errorA">
-            <span translate="">its a error</span>
+            <span translate=""> <p style="color: red;">its a error in service</p></span>
+        </div>
+    </div>
+    <div ng-messages="vm.transportationConflict" role="alert" multiple>
+        <div ng-message="errorA">
+            <span translate="">  <p style="color: red;">its a error in transportation</p></span>
+        </div>
+    </div>
+    <div ng-messages="vm.hotelConflict" role="alert" multiple>
+        <div ng-message="errorA">
+            <span translate="">  <p style="color: red;">its a error in hotel</p></span>
         </div>
     </div>
 	<div ng-show="ngCart.getTotalItems() > 0">

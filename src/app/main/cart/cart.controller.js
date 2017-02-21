@@ -24,7 +24,9 @@
         vm.serviceType = {};
         vm.availableObject = {};
         vm.allCartItems={};
-        vm.conflict = {};
+        vm.serviceConflict = {};
+        vm.transportationConflict={};
+        vm.hotelConflict = {};
 
         vm.init = function(){
             vm.travelInfo.location = localStorage.getItem("location");
@@ -158,27 +160,32 @@
 
             }
         }
-        vm.hotelCheckIn = function(hotel){
+        vm.hotelDate = function(hotel){
             if (hotel.checkOutDate < hotel.checkInDate){
                 hotel.hotelCheckInError = {low:true};
+                hotel.hotelCheckOutError = {low:true};
                 hotel.checkInDate = null; 
-            }else{
-                hotel.hotelCheckInError = {low:false};
-            }
-        }
-        vm.hotelCheckOut = function(hotel){
-            if (hotel.checkOutDate < hotel.checkInDate){
+                 hotel.checkOutDate = null;
+            }else if(moment(hotel.checkOutDate).isSame(hotel.checkInDate)){
+                hotel.hotelCheckInError = {low:true};
+                hotel.hotelCheckOutError = {low:true};
+                hotel.checkInDate = null; 
                 hotel.checkOutDate = null;
-                hotel.hotelCheckOutError = {low:true};   
-            }else{
-                hotel.hotelCheckOutError = {low:false};
             }
+            else{
+                hotel.hotelCheckInError = {low:false};
+                 hotel.hotelCheckOutError = {low:false};
+            }
+            vm.hotelConflictCalculator(hotel);
         }
+        
         vm.serviceDate = function(service){
             console.log(service);
+            vm.serviceConflictCalculator(service);
         }
         vm.transportationDate = function(transportation){
             console.log(transportation);
+            vm.transportationConflictCalculator(transportation);
         }
         $rootScope.$on('ngCart:change', function(){
             vm.allCartItems.wholeItems = _.pluck(ngCart.getItems(),'_data');
@@ -188,23 +195,128 @@
             console.log(vm.allCartItems.hotel);
             console.log(vm.allCartItems.service);
             console.log(vm.allCartItems.transportation);
-            vm.conflictCalculator();
+            // vm.conflictCalculator();
         });
-        vm.conflictCalculator = function(){
-            console.log(vm.allCartItems.hotel);
-            console.log(vm.allCartItems.service);
-            console.log(vm.allCartItems.transportation);
-            if ((vm.allCartItems.hotel.length !== 0) && (vm.allCartItems.transportation.length !== 0)){
-            if (vm.allCartItems.hotel[0].location.name == vm.allCartItems.transportation[0].start_location){
-                console.log("location matched");
-                vm.conflict = {errorA : true};
-            }else{
-                console.log("location not matched");
-                vm.conflict = {errorA: false};
+        vm.hotelConflictCalculator =function(hotel){
+            vm.hotelConflict = {errorA:false};
+            for(var i=0; i<vm.allCartItems.hotel.length;i++){
+                if(hotel.id != vm.allCartItems.hotel[i].id){
+                    if(moment(hotel.checkInDate).isSame(vm.allCartItems.hotel[i].checkInDate)){
+                        hotel.checkInDate= null;
+                        vm.allCartItems.hotel[i].checkInDate = null;
+                        vm.hotelConflict = {errorA:true};
+                    }
+                    if(moment(hotel.checkOutDate).isSame(vm.allCartItems.hotel[i].checkOutDate)){
+                        hotel.checkOutDate= null;
+                        vm.allCartItems.hotel[i].checkOutDate = null;
+                        vm.hotelConflict = {errorA:true};
+                    }
+                    if(moment(hotel.checkInDate).isBetween(vm.allCartItems.hotel[i].checkInDate,vm.allCartItems.hotel[i].checkOutDate)){
+                        hotel.checkInDate= null;
+                        vm.allCartItems.hotel[i].checkInDate = null;
+                        vm.allCartItems.hotel[i].checkOutDate = null
+                        vm.hotelConflict = {errorA:true};
+                    }
+                    if(moment(hotel.checkOutDate).isBetween(vm.allCartItems.hotel[i].checkInDate,vm.allCartItems.hotel[i].checkOutDate)){
+                        hotel.checkOutDate= null;
+                        vm.allCartItems.hotel[i].checkInDate = null;
+                        vm.allCartItems.hotel[i].checkOutDate = null
+                        vm.hotelConflict = {errorA:true};
+                    }
+                    if(moment(vm.allCartItems.hotel[i].checkInDate).isBetween(hotel.checkInDate,hotel.checkOutDate)){
+                        vm.allCartItems.hotel[i].checkInDate = null;
+                        hotel.checkInDate = null;
+                        hotel.checkOutDate = null
+                        vm.hotelConflict = {errorA:true};
+                    }
+                    if(moment(vm.allCartItems.hotel[i].checkOutDate).isBetween(hotel.checkInDate,hotel.checkOutDate)){
+                        vm.allCartItems.hotel[i].checkOutDate = null;
+                        hotel.checkInDate = null;
+                        hotel.checkOutDate = null
+                        vm.hotelConflict = {errorA:true};
+                    }
+                }
             }
-            }else{
-                vm.conflict = {errorA: false};
+
+        }
+
+        vm.transportationConflictCalculator =function(transportation){
+            vm.transportationConflict = {errorA:false};
+            for (var i=0;i<vm.allCartItems.transportation.length;i++){
+                if (transportation.id != vm.allCartItems.transportation[i].id){
+                    if ((transportation.start_location === vm.allCartItems.transportation[i].start_location) && (moment(transportation.date).isSame(vm.allCartItems.transportation[i].date))){
+                        transportation.date = null;
+                        vm.allCartItems.transportation[i].date = null;
+                        vm.transportationConflict = {errorA:true};
+                    }
+                    if ((transportation.end_location === vm.allCartItems.transportation[i].end_location) && (moment(transportation.date).isSame(vm.allCartItems.transportation[i].date))){
+                        transportation.date = null;
+                        vm.allCartItems.transportation[i].date = null;
+                        vm.transportationConflict = {errorA:true};
+                    }
+                }
             }
+        }
+        vm.serviceConflictCalculator = function(service){
+            vm.serviceConflict = {errorA : false};
+            for (var i = 0; i< vm.allCartItems.service.length; i++){
+                if (service.id != vm.allCartItems.service[i].id){
+                    console.log(service.id);
+                    if(moment(service.date).isSame(vm.allCartItems.service[i].date)){
+                        service.date = null;
+                        vm.allCartItems.service[i].date = null;
+                        vm.serviceConflict = {errorA : true};
+                    }else{
+                        // vm.conflict = {errorA : false};
+                    }
+                }
+            }
+            // console.log(vm.allCartItems.hotel);
+            // console.log(vm.allCartItems.service);
+            // console.log(vm.allCartItems.transportation);
+            // if ((vm.allCartItems.hotel.length !== 0) && (vm.allCartItems.transportation.length !== 0)){
+            //     if (vm.allCartItems.hotel[0].location.name == vm.allCartItems.transportation[0].start_location){
+            //         console.log("location matched");
+            //         vm.conflict = {errorA : true};
+            //     }else{
+            //         console.log("location not matched");
+            //         vm.conflict = {errorA: false};
+            //     }
+            // }else{
+            //     vm.conflict = {errorA: false};
+            // }
+            // if (vm.allCartItems.service.length > 1){
+                
+            //     // if(_.each(vm.allCartItems.service,function(ser){ _.has(ser, 'date')})){
+
+            //     var s = _.pluck(vm.allCartItems.service, 'date');
+            //     console.log(s);
+            //     var count = 0;
+            //     for  (var i =0; i<s.length;i++){
+            //         for (var  j =0; j<s.length; j++){
+            //             // if (i !== j){
+            //                 console.log(s);
+            //                 if(moment(s[i]).isSame(s[j])){
+            //                     count++;
+            //                     // console.log("same");
+            //                     // vm.conflict = {errorA : true};
+            //                 }else{
+            //                     // console.log("not same");
+            //                     // vm.conflict = {errorA : false};
+            //                 }
+            //             // }
+            //         }
+            //     }
+            //     console.log(count);
+            //     if(count > s.length){
+            //         vm.conflict = {errorA : true};
+            //     }else{
+            //         vm.conflict = {errorA : false};
+            //     }
+            // // }
+            //  }else{
+            //     vm.conflict = {errorA : false};
+            //  }
         }
         $rootScope.$on('ngCart:itemAdded', function(){
             $mdToast.show(
