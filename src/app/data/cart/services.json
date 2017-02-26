@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "id": 10,
+            "id": 4,
             "name": "Paraglyding",
             "slug": "paraglyding",
             "price": 23,
@@ -40,7 +40,7 @@
             "location": "Pokhara"
         },
         {
-            "id": 1,
+            "id": 5,
             "name": "Bungy Jump",
             "slug": "bungy-jump",
             "price": 43,
@@ -79,7 +79,7 @@
             "location": "Kathmandu"
         },
         {
-            "id": 13,
+            "id": 6,
             "name": "Ultra-light Flight",
             "slug": "ultra-light-flight",
             "price": 13,
@@ -118,7 +118,7 @@
             "location": "Pokhara"
         },
         {
-            "id": 14,
+            "id": 7,
             "name": "Jeep Drive",
             "slug": "jeep-drive",
             "price": 33,
@@ -157,7 +157,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 17,
+            "id": 8,
             "name": "Tharu Culture Show",
             "slug": "tharu-culture-show-2",
             "price": 66,
@@ -196,7 +196,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 48,
+            "id": 9,
             "name": "Elephant Bath",
             "slug": "elephant-bath-1",
             "price": 27,
@@ -235,7 +235,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 49,
+            "id": 10,
             "name": "Elephant Safari",
             "slug": "elephant-safari",
             "price": 33,
@@ -274,7 +274,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 52,
+            "id": 11,
             "name": "Canoeing",
             "slug": "canoeing",
             "price": 19,
@@ -313,7 +313,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 54,
+            "id": 12,
             "name": "2 way Tourist Bus",
             "slug": "2-way-tourist-bus",
             "price": 78,
@@ -352,7 +352,7 @@
             "location": "Chitwan"
         },
         {
-            "id": 53,
+            "id": 13,
             "name": "2 Night 3 Days Nepali Package",
             "slug": "2-night-3-days-nepali-package",
             "price": 15,

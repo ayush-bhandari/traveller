@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "id": 48,
+            "id": 1,
             "name": "Avataar Kathmandu Hotel",
             "slug": "avataar-kathmandu-hotel",
             "description": "Hotel In Kathmandu",
@@ -75,7 +75,7 @@
             ]
         },
         {
-            "id": 49,
+            "id": 2,
             "name": "Trekkers Inn",
             "slug": "trekkers-inn",
             "description": "Hotel in Pokhara",
@@ -130,7 +130,7 @@
             ]
         },
         {
-            "id": 50,
+            "id": 3,
             "name": "Baghmara Wildlife Resort",
             "slug": "baghmara-wildlife-resort",
             "description": "Resort located perfectly to base you right next to the National Park Entrance from where you could start all Jungle Activities.",

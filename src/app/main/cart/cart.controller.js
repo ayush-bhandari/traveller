@@ -27,6 +27,8 @@
         vm.serviceConflict = {};
         vm.transportationConflict={};
         vm.hotelConflict = {};
+        vm.serviceHotelConflict = {};
+        vm.transportationHotelConflict = {};
 
         vm.init = function(){
             vm.travelInfo.location = localStorage.getItem("location");
@@ -182,11 +184,13 @@
         vm.serviceDate = function(service){
             console.log(service);
             vm.serviceConflictCalculator(service);
+            vm.serviceHotelConflictCalculator(service);
         }
         vm.transportationDate = function(transportation){
-            console.log(transportation);
-            vm.transportationConflictCalculator(transportation);
-        }
+                console.log(transportation);
+                vm.transportationConflictCalculator(transportation);
+                vm.transportationHotelConflictCalculator(transportation);
+            }
         $rootScope.$on('ngCart:change', function(){
             vm.allCartItems.wholeItems = _.pluck(ngCart.getItems(),'_data');
             vm.allCartItems.hotel = _.where(vm.allCartItems.wholeItems, {type: "hotel"});
@@ -271,6 +275,59 @@
                     }
                 }
             }
+        }
+            vm.serviceHotelConflictCalculator = function(service){
+                vm.serviceHotelConflict = {errorA:false};
+                for (var i=0; i<vm.allCartItems.hotel.length; i++){
+                    if (service.location === vm.allCartItems.hotel[i].location.city){
+                        if((moment(service.date).isSame(vm.allCartItems.hotel[i].checkInDate))||(moment(service.date).isSame(vm.allCartItems.hotel[i].checkOutDate))||(moment(service.date).isBetween(vm.allCartItems.hotel[i].checkInDate,vm.allCartItems.hotel[i].checkOutDate))){
+                         vm.serviceHotelConflict = {errorA:false};   
+                      }else{
+                            vm.serviceHotelConflict = {errorA:true}; 
+                            service.date = null;  
+                      }
+              }else{
+                if((moment(service.date).isSame(vm.allCartItems.hotel[i].checkInDate))||(moment(service.date).isSame(vm.allCartItems.hotel[i].checkOutDate))||(moment(service.date).isBetween(vm.allCartItems.hotel[i].checkInDate,vm.allCartItems.hotel[i].checkOutDate))){
+                     
+                     vm.serviceHotelConflict = {errorA:true}; 
+                        service.date = null; 
+                  }else{
+                         vm.serviceHotelConflict = {errorA:false};   
+                  } 
+              }
+                }
+            }
+            vm.transportationHotelConflictCalculator = function (transportation){
+                console.log(transportation);
+                vm.transportationHotelConflict = {errorA:false};
+                for (var i=0; i<vm.allCartItems.hotel.length; i++){
+                    if (transportation.start_location === vm.allCartItems.hotel[i].location.city){
+                        if (moment(transportation.date).isSame(vm.allCartItems.hotel[i].checkOutDate)){
+                            vm.transportationHotelConflict = {errorA:false};
+                        }else{
+                            vm.transportationHotelConflict = {errorA:true};
+                            transportation.date = null;
+                        }
+                    }
+                    else if(transportation.end_location === vm.allCartItems.hotel[i].location.city){
+                        if (moment(transportation.date).isSame(vm.allCartItems.hotel[i].checkInDate)){
+                            vm.transportationHotelConflict = {errorA:false};
+                        }else{
+                            vm.transportationHotelConflict = {errorA:true};
+                            transportation.date = null;
+                        }
+                    }
+                    else {
+                        if ((moment(transportation.date).isSame(vm.allCartItems.hotel[i].checkInDate)) || (moment(transportation.date).isSame(vm.allCartItems.hotel[i].checkOutDate)) || (moment(transportation.date).isBetween(vm.allCartItems.hotel[i].checkInDate,vm.allCartItems.hotel[i].checkOutDate))){
+                            vm.transportationHotelConflict = {errorA:true};
+                            transportation.date = null;
+                        }else {
+                            vm.transportationHotelConflict = {errorA:false};
+                        }
+                    }
+                }
+            }
+            
             // console.log(vm.allCartItems.hotel);
             // console.log(vm.allCartItems.service);
             // console.log(vm.allCartItems.transportation);
@@ -317,7 +374,7 @@
             //  }else{
             //     vm.conflict = {errorA : false};
             //  }
-        }
+        // }
         $rootScope.$on('ngCart:itemAdded', function(){
             $mdToast.show(
                   $mdToast.simple()
